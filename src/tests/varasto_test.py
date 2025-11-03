@@ -1,5 +1,5 @@
 import unittest
-#from varasto import Varasto
+from varasto import Varasto
 
 
 class TestVarasto(unittest.TestCase):
@@ -91,5 +91,4 @@ class TestVarastoExtra(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    #unittest.main()
-    print("moi")
+    unittest.main()
