@@ -89,6 +89,3 @@ class TestVarastoExtra(unittest.TestCase):
         v = Varasto(3.5, 1.2)
         self.assertEqual(str(v), "saldo = 1.2, vielä tilaa 2.3")
 
-
-if __name__ == "__main__":
-    unittest.main()
