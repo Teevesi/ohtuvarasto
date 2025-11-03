@@ -92,4 +92,3 @@ class TestVarastoExtra(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-    x = 1
