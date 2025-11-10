@@ -88,4 +88,3 @@ class TestVarastoExtra(unittest.TestCase):
     def test_str_representation_with_floats(self):
         v = Varasto(3.5, 1.2)
         self.assertEqual(str(v), "saldo = 1.2, vielä tilaa 2.3")
-
