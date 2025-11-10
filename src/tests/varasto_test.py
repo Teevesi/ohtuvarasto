@@ -51,11 +51,11 @@ class TestVarastoExtra(unittest.TestCase):
         self.assertEqual(v.tilavuus, 0.0)
         self.assertEqual(v.saldo, 0.0)
 
-    def test_init_with_negative_tilavuus_and_positive_alku_saldo_sets_saldo_to_param(self):
-        # This exercises the branch where alku_saldo > tilavuus (uses parameter tilavuus)
+    def test_init_with_neg_tilavuus_and_pos_alku_saldo_set_saldo_to_param(self):
+        # This exercises the branch where alku_saldo > tilavuus
         v = Varasto(-1, 5)
         self.assertEqual(v.tilavuus, 0.0)
-        # current implementation assigns the parameter 'tilavuus' to saldo in that branch
+        # currently assigns the parameter 'tilavuus' to saldo in that branch
         self.assertEqual(v.saldo, -1)
 
     def test_lisaa_varastoon_negative_does_nothing(self):
