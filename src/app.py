@@ -1,10 +1,11 @@
 """Flask web application for warehouse management."""
 
+import os
 from flask import Flask, render_template, request, redirect, url_for, flash
 from varasto import Varasto
 
 app = Flask(__name__)
-app.secret_key = 'warehouse-secret-key-change-in-production'
+app.secret_key = os.environ.get('SECRET_KEY', os.urandom(24))
 
 # In-memory storage for warehouses (name -> Varasto instance)
 warehouses = {}
@@ -126,4 +127,5 @@ def remove_content(name):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    debug_mode = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+    app.run(debug=debug_mode)

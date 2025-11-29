@@ -37,6 +37,11 @@ A Flask-based web application for managing warehouses (Varasto). This applicatio
 
 3. Open your browser and navigate to `http://127.0.0.1:5000`
 
+### Environment Variables
+
+- `SECRET_KEY` - Flask secret key for session management (auto-generated if not set)
+- `FLASK_DEBUG` - Set to `true` to enable debug mode (disabled by default)
+
 ### Running Tests
 
 ```bash
