@@ -99,6 +99,11 @@ def add_content(name):
         flash('Amount must be greater than 0!', 'error')
         return redirect(url_for('index'))
 
+    available_space = warehouses[name].paljonko_mahtuu()
+    if available_space <= 0:
+        flash(f'Warehouse "{name}" is full! Cannot add more content.', 'error')
+        return redirect(url_for('index'))
+
     warehouses[name].lisaa_varastoon(amount)
     flash(f'Added {amount} to warehouse "{name}"!', 'success')
     return redirect(url_for('index'))
